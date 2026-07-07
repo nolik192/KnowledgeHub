@@ -16,6 +16,10 @@ class BookIn(BaseModel):
             raise ValueError("pages must be a positive integer")
         return v
 
+@app.get("/")
+def root():
+    return {"message": "Library API is running"}
+
 @app.get("/books")
 def list_books():
     return {"books": books}
